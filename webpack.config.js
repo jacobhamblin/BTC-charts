@@ -7,12 +7,12 @@ module.exports = {
   devtool : 'eval-source-map',
 
   entry: [
-    './app/index.js',
-    './style/main.scss',
+    './src/js/index.js',
+    './src/scss/main.scss',
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'dist/generated'),
+    path: path.join(__dirname, 'dist/bundle'),
     publicPath: '/',
   },
   resolve: {
