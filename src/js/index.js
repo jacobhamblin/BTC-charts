@@ -43,16 +43,11 @@ class App extends Component {
   }
 
   processData(exchanges) {
-    delete exchanges.bitkonan
-    delete exchanges.bitex
-    delete exchanges.hitbtc
-    delete exchanges.rocktrading
-    delete exchanges.cointrader
-    delete exchanges.bitquick
-    delete exchanges.independentreserve
-    delete exchanges.loyalbit
-    delete exchanges.quadrigacx
-    delete exchanges.campbx
+    let negligibleExchanges = [
+      'bitkonan', 'bitex', 'hitbtc', 'rocktrading', 'cointrader', 'bitquick',
+      'independentreserve', 'loyalbit', 'quadrigacx', 'campbx'
+    ]
+    negligibleExchanges.map( exch => delete exchanges[exch] )
 
     this.setState({
       exchanges: exchanges

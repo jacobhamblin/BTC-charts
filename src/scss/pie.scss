@@ -2,22 +2,22 @@ div.pie {
   position: relative;
 
   svg {
+    text {
+      margin-bottom: -15px;
+    }
 
-    .arc {
+    path {
+      stroke: #fff;
+      cursor: pointer;
+      stroke-width: 2;
 
-      text {
-        font: 10px sans-serif;
-        text-anchor: middle;
-      }
+      &:hover {
 
-      path {
-        stroke: #fff;
       }
     }
 
     rect {
       cursor: pointer;
-      stroke-width: 2;
     }
 
     rect.disabled {

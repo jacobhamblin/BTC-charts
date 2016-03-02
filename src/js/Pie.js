@@ -44,10 +44,10 @@ const Pie = ({data}) => {
     .attr("d", arc)
     .attr("fill", ((d,i) => color(d.data.label)))
     .each(function(d) {this._current = d})
-
-  path.on('mouseover', d => {
+    .on('mouseover', d => {
     // let total = d3.sum(aggregate.map(d => d.count));
     // let percent = Math.round(1000 * d.data.count / total) / 10;
+    // d.transtion().duration(100).style("fill", (d,i) => color(i) * 1.1)
     tooltip.select('.label').html(d.data.label);
     tooltip.select('.count').html(d.data.count);
     tooltip.select('.percent').html(d.data.val + '%');
