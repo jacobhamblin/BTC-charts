@@ -28,7 +28,7 @@ class App extends Component {
         window.exch = JSON.parse(request.responseText)
         let exchanges = JSON.parse(request.responseText)
 
-        const.processData(exchanges)
+        component.processData(exchanges)
 
       } else {
         console.log('We reached our target server, but it returned an error')
@@ -43,11 +43,20 @@ class App extends Component {
   }
 
   processData(exchanges) {
-    let aggregate = []
+    delete exchanges.bitkonan
+    delete exchanges.bitex
+    delete exchanges.hitbtc
+    delete exchanges.rocktrading
+    delete exchanges.cointrader
+    delete exchanges.bitquick
+    delete exchanges.independentreserve
+    delete exchanges.loyalbit
+    delete exchanges.quadrigacx
 
     this.setState({
       exchanges: exchanges
     })
+    console.log(exchanges)
   }
 
   render() {
@@ -58,7 +67,7 @@ class App extends Component {
           <Nav exchanges={this.state.exchanges}/>
         </Header>
 
-        <Pie data={this.state.exchanges} />
+        <Pie data={this.state.exchanges}/>
 
         {this.props.children}
       </div>
