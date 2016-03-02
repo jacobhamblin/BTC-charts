@@ -52,6 +52,7 @@ class App extends Component {
     delete exchanges.independentreserve
     delete exchanges.loyalbit
     delete exchanges.quadrigacx
+    delete exchanges.campbx
 
     this.setState({
       exchanges: exchanges
