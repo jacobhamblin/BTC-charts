@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom'
 
 import Header from './Header.js'
 import Nav from './Nav.js'
+import Pie from './Pie.js'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      exchanges: {}
+      exchanges: {},
+      selected: null
     }
   }
 
@@ -26,9 +28,8 @@ class App extends Component {
         window.exch = JSON.parse(request.responseText)
         let exchanges = JSON.parse(request.responseText)
 
-        component.setState({
-          exchanges: exchanges
-        })
+        const.processData(exchanges)
+
       } else {
         console.log('We reached our target server, but it returned an error')
       }
@@ -41,17 +42,13 @@ class App extends Component {
     request.send();
   }
 
-  // displayData() {
-  //   let aggregate = [], obj = this.state.exchanges;
-  //
-  //   for (let key in obj) {
-  //     if (obj.hasOwnProperty(key)) aggregate.push(key)
-  //   }
-  //
-  //   let doms = aggregate.map(exchange => <div>{exchange}</div>)
-  //
-  //   return doms
-  // }
+  processData(exchanges) {
+    let aggregate = []
+
+    this.setState({
+      exchanges: exchanges
+    })
+  }
 
   render() {
     return (
@@ -60,6 +57,8 @@ class App extends Component {
           <h2>graphet</h2>
           <Nav exchanges={this.state.exchanges}/>
         </Header>
+
+        <Pie data={this.state.exchanges} />
 
         {this.props.children}
       </div>
