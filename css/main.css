@@ -2,14 +2,14 @@ nav ul li {
   display: inline-block; }
 div.pie {
   position: relative; }
-  div.pie svg .arc text {
-    font: 10px sans-serif;
-    text-anchor: middle; }
-  div.pie svg .arc path {
-    stroke: #fff; }
-  div.pie svg rect {
+  div.pie svg text {
+    margin-bottom: -15px; }
+  div.pie svg path {
+    stroke: #fff;
     cursor: pointer;
     stroke-width: 2; }
+  div.pie svg rect {
+    cursor: pointer; }
   div.pie svg rect.disabled {
     fill: transparent !important; }
   div.pie svg .legend {
