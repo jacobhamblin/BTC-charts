@@ -1,5 +1,34 @@
 nav ul li {
   display: inline-block; }
+div.pie {
+  position: relative; }
+  div.pie svg .arc text {
+    font: 10px sans-serif;
+    text-anchor: middle; }
+  div.pie svg .arc path {
+    stroke: #fff; }
+  div.pie svg rect {
+    cursor: pointer;
+    stroke-width: 2; }
+  div.pie svg rect.disabled {
+    fill: transparent !important; }
+  div.pie svg .legend {
+    font-size: 12px; }
+  div.pie .tooltip {
+    background: #eee;
+    box-shadow: 0 0 5px #999999;
+    color: #333;
+    display: none;
+    font-size: 12px;
+    left: 160px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    width: 80px;
+    z-index: 2;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
 *, *:before, *:after {
   box-sizing: border-box; }
 
