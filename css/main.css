@@ -1,39 +1,48 @@
 nav ul li {
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 1em;
+  box-sizing: border-box;
+  border-bottom: 0px solid; }
+  nav ul li:nth-of-type(1) {
+    border-color: #AAFF99; }
+  nav ul li:nth-of-type(2) {
+    border-color: #99FFAA; }
+  nav ul li:nth-of-type(3) {
+    border-color: #99FFCC; }
+  nav ul li:nth-of-type(4) {
+    border-color: #99FFEE; }
+  nav ul li:nth-of-type(5) {
+    border-color: #99EEFF; }
+  nav ul li:nth-of-type(6) {
+    border-color: #99CCFF; }
+  nav ul li:nth-of-type(7) {
+    border-color: #99AAFF; }
+  nav ul li:nth-of-type(8) {
+    border-color: #AA99FF; }
+  nav ul li:nth-of-type(9) {
+    border-color: #CC99FF; }
+  nav ul li:nth-of-type(10) {
+    border-color: #EE99FF; }
+  nav ul li:nth-of-type(11) {
+    border-color: #FF99EE; }
+  nav ul li:nth-of-type(12) {
+    border-color: #FF99CC; }
+  nav ul li:nth-of-type(13) {
+    border-color: #FF99AA; }
+  nav ul li:nth-of-type(14) {
+    border-color: #FF9999; }
+
+nav ul li.selected {
+  border-width: 4px; }
 div.pie {
   position: relative; }
   div.pie svg text {
     margin-bottom: -15px; }
-  div.pie svg g {
-    cursor: pointer; }
-    div.pie svg g text {
-      pointer-events: none; }
-  div.pie svg path {
-    stroke: #fff;
-    cursor: pointer;
-    stroke-width: 2; }
-  div.pie svg rect {
-    cursor: pointer; }
-  div.pie svg rect.disabled {
-    fill: transparent !important; }
-  div.pie svg .legend {
-    font-size: 12px; }
-  div.pie .tooltip {
-    background: #eee;
-    box-shadow: 0 0 5px #999999;
-    color: #333;
-    display: none;
-    font-size: 12px;
-    left: 160px;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    width: 80px;
-    z-index: 2;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%); }
+  div.pie svg > text {
+    display: none; }
+  div.pie svg > text.highcharts-title {
+    display: block; }
 *, *:before, *:after {
   box-sizing: border-box; }
 
