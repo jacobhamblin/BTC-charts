@@ -4,13 +4,16 @@ import ReactDOM from 'react-dom'
 import Header from './Header.js'
 import Nav from './Nav.js'
 import Pie from './Pie.js'
+import Timestamp from './Timestamp.js'
+// import DataShow from './DataShow.js'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       exchanges: {},
-      selected: null
+      selected: null,
+      timestamp: null
     }
     this.changeSelected = this.changeSelected.bind(this)
   }
@@ -23,6 +26,7 @@ class App extends Component {
     this.setState({
       selected: string
     })
+    console.log(this.state.timestamp)
   }
 
   loadData() {
@@ -49,19 +53,28 @@ class App extends Component {
   }
 
   processData(exchanges) {
+    let timestamp = exchanges['timestamp']
     let negligibleExchanges = [
       'bitkonan', 'bitex', 'hitbtc', 'rocktrading', 'cointrader', 'bitquick',
-      'independentreserve', 'loyalbit', 'quadrigacx', 'campbx'
+      'independentreserve', 'loyalbit', 'quadrigacx', 'campbx', 'timestamp'
     ]
     negligibleExchanges.map( exch => delete exchanges[exch] )
 
     this.setState({
-      exchanges: exchanges
+      exchanges: exchanges,
+      timestamp: timestamp
     })
-    console.log(exchanges)
   }
 
   render() {
+    // let selectedExchangeData, DataShow
+    // for (let key in this.state.exchanges) {
+    //   if (this.state.exchanges[key]['display_name'] === this.state.selected) {
+    //     selectedExchangeData = this.state.exchanges[key]
+    //     DataShow = <DataShow data={selectedExchangeData}/>
+    //   }
+    // }
+
     return (
       <div>
         <Header>
@@ -69,10 +82,17 @@ class App extends Component {
           <Nav
             exchanges={this.state.exchanges}
             changeSelected={this.changeSelected}
+            selected={this.state.selected}
+            colors={this.colors}
           />
+          <Timestamp timestamp={this.state.timestamp}/>
         </Header>
 
-        <Pie data={this.state.exchanges}/>
+        <Pie
+          changeSelected={this.changeSelected}
+          data={this.state.exchanges}
+          selected={this.state.selected}
+        />
 
         {this.props.children}
       </div>
@@ -81,6 +101,6 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App>Hello, World!</App>,
+  <App/>,
   document.querySelector('#root')
 );

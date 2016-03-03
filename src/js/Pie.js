@@ -4,13 +4,18 @@ import ReactHighcharts from 'react-highcharts'
 
 import '../scss/pie.scss'
 
-const Pie = ({data}) => {
+const Pie = ({data, changeSelected, selected}) => {
+  const appChangeSelected = changeSelected
   let aggregate = []
   for (let key in data) {
     if (data.hasOwnProperty(key) && key !== "timestamp") {
       let obj = {}
       obj['name'] = data[key]['display_name']
       obj['y'] = data[key]['volume_percent']
+      if (obj['name'] === selected) {
+        obj['selected'] = true
+        obj['sliced'] = true
+      }
       aggregate.push(obj)
     }
   }
@@ -21,10 +26,15 @@ const Pie = ({data}) => {
           plotBackgroundColor: null,
           plotBorderWidth: null,
           plotShadow: false,
-          type: 'pie'
+          type: 'pie',
       },
+      colors: [
+        '#AAFF99', '#99FFAA', '#99FFCC', '#99FFEE', '#99EEFF',
+        '#99CCFF', '#99AAFF', '#AA99FF', '#CC99FF', '#EE99FF', 
+        '#FF99EE', '#FF99CC', '#FF99AA', '#FF9999'
+      ],
       title: {
-          text: 'Current Market Share of major exchanges'
+          text: 'Market Share of Major Exchanges'
       },
       tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -33,17 +43,27 @@ const Pie = ({data}) => {
           pie: {
               allowPointSelect: true,
               cursor: 'pointer',
+              innerSize: 100
           }
       },
       series: [{
-          name: 'Market Volume',
+          name: 'Market Share',
           colorByPoint: true,
-          data: aggregate
+          data: aggregate,
+          point: {
+            events: {
+              click: function (e) {
+                appChangeSelected(this.name);
+              }
+            }
+          }
       }]
     };
 
   return (
-    <ReactHighcharts config={config}/>
+    <div className="pie">
+      <ReactHighcharts config={config}/>
+    </div>
   )
 
 }

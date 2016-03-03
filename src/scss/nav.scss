@@ -3,6 +3,55 @@ nav {
     li {
       display: inline-block;
       cursor: pointer;
+      padding: 1em;
+      box-sizing: border-box;
+      border-bottom: 0px solid;
+      &:nth-of-type(1) {
+        border-color: #AAFF99;
+      }
+      &:nth-of-type(2) {
+        border-color: #99FFAA;
+      }
+      &:nth-of-type(3) {
+        border-color: #99FFCC;
+      }
+      &:nth-of-type(4) {
+        border-color: #99FFEE;
+      }
+      &:nth-of-type(5) {
+        border-color: #99EEFF;
+      }
+      &:nth-of-type(6) {
+        border-color: #99CCFF;
+      }
+      &:nth-of-type(7) {
+        border-color: #99AAFF;
+      }
+      &:nth-of-type(8) {
+        border-color: #AA99FF;
+      }
+      &:nth-of-type(9) {
+        border-color: #CC99FF;
+      }
+      &:nth-of-type(10) {
+        border-color: #EE99FF;
+      }
+      &:nth-of-type(11) {
+        border-color: #FF99EE;
+      }
+      &:nth-of-type(12) {
+        border-color: #FF99CC;
+      }
+      &:nth-of-type(13) {
+        border-color: #FF99AA;
+      }
+      &:nth-of-type(14) {
+        border-color: #FF9999;
+      }
+    }
+
+    li.selected {
+      border-width: 4px;
     }
   }
 }
