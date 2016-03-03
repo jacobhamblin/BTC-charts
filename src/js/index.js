@@ -12,10 +12,17 @@ class App extends Component {
       exchanges: {},
       selected: null
     }
+    this.changeSelected = this.changeSelected.bind(this)
   }
 
   componentDidMount() {
     this.loadData()
+  }
+
+  changeSelected(string) {
+    this.setState({
+      selected: string
+    })
   }
 
   loadData() {
@@ -60,7 +67,10 @@ class App extends Component {
       <div>
         <Header>
           <h2>graphet</h2>
-          <Nav exchanges={this.state.exchanges}/>
+          <Nav
+            exchanges={this.state.exchanges}
+            changeSelected={this.changeSelected}
+          />
         </Header>
 
         <Pie data={this.state.exchanges}/>

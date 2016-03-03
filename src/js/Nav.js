@@ -2,21 +2,20 @@ import React, { Component } from 'react'
 import '../scss/nav.scss'
 
 
-const Nav = ({exchanges}) => {
+const Nav = ({exchanges, changeSelected}) => {
   let names = Object.keys(exchanges)
     .slice(0, Object.keys(exchanges).length - 1)
-
-  let aggregate = []
-  for (let i = 0; i < names.length; i++) {
-    aggregate.push(<li>{names[i]}</li>)
-  }
 
   return (
     <nav>
       <ul>
-        {aggregate}
+        {names.map(name => (
+          <li onClick={e => changeSelected(name)}>
+            {name}
+          </li>
+        ))}
       </ul>
-    </nav>  
+    </nav>
   )
 }
 
