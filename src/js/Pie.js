@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import rd3, { PieChart } from 'react-d3'
+import Highcharts from 'highcharts'
+import ReactHighcharts from 'react-highcharts'
+
 import '../scss/pie.scss'
 
 const Pie = ({data}) => {
@@ -7,23 +9,41 @@ const Pie = ({data}) => {
   for (let key in data) {
     if (data.hasOwnProperty(key) && key !== "timestamp") {
       let obj = {}
-      obj['label'] = data[key]['display_name']
-      obj['value'] = data[key]['volume_percent']
+      obj['name'] = data[key]['display_name']
+      obj['y'] = data[key]['volume_percent']
       aggregate.push(obj)
     }
   }
 
+  let config =
+    {
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+      },
+      title: {
+          text: 'Current Market Share of major exchanges'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+          }
+      },
+      series: [{
+          name: 'Market Volume',
+          colorByPoint: true,
+          data: aggregate
+      }]
+    };
+
   return (
-    <PieChart
-      data={aggregate}
-      width={400}
-      height={400}
-      radius={200}
-      innerRadius={100}
-      sectorBorderColor="white"
-      delay={100}
-      title="Pie Chart"
-    />
+    <ReactHighcharts config={config}/>
   )
 
 }

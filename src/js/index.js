@@ -36,7 +36,6 @@ class App extends Component {
         let exchanges = JSON.parse(request.responseText)
 
         component.processData(exchanges)
-
       } else {
         console.log('We reached our target server, but it returned an error')
       }

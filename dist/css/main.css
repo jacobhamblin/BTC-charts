@@ -5,6 +5,10 @@ div.pie {
   position: relative; }
   div.pie svg text {
     margin-bottom: -15px; }
+  div.pie svg g {
+    cursor: pointer; }
+    div.pie svg g text {
+      pointer-events: none; }
   div.pie svg path {
     stroke: #fff;
     cursor: pointer;

@@ -6,6 +6,14 @@ div.pie {
       margin-bottom: -15px;
     }
 
+    g {
+      cursor: pointer;
+
+      text {
+        pointer-events: none;
+      }
+    }
+
     path {
       stroke: #fff;
       cursor: pointer;
