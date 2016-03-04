@@ -4,18 +4,26 @@ import ReactHighcharts from 'react-highcharts'
 
 import '../scss/line.scss'
 
-const Line = ({data, changeSelected, selected}) => {
+const Line = ({data, changeSelected, selected, colors}) => {
   const appChangeSelected = changeSelected
-  let aggregate = []
-  let exchangeNames = []
-  let exchangeVolumes = []
-  let exchangePrices = []
+  let aggregate = [], names = [], volumes = [], prices = [], i = 0
   for (let key in data) {
-    if (data.hasOwnProperty(key) && key !== "timestamp") {
-      let obj = {}
-      exchangeNames.push(data[key]['display_name'])
-      exchangeVolumes.push(data[key]['volume_btc'])
-      exchangePrices.push(data[key]['rates']['last'])
+    if (data.hasOwnProperty(key)) {
+      let volume = {}
+      let pricesObj = {}
+      if (data[key]['display_name'] === selected) {
+        volume['selected'] = true
+        pricesObj['selected'] = true
+      }
+      volume['y'] = data[key]['volume_btc']
+      pricesObj['y'] = data[key]['rates']['last']
+      volume['color'] = colors[i]
+      pricesObj['color'] = '#333333'
+
+      volumes.push(volume)
+      prices.push(pricesObj)
+      names.push(data[key]['display_name'])
+      i++
     }
   }
 
@@ -27,7 +35,7 @@ const Line = ({data, changeSelected, selected}) => {
       text: 'Current Price and Trade Volume per Exchange'
     },
     xAxis: [{
-      categories: exchangeNames,
+      categories: names,
       crosshair: true
     }],
     yAxis: [{
@@ -62,15 +70,32 @@ const Line = ({data, changeSelected, selected}) => {
       shared: true
     },
     plotOptions: {
+      series: {
+        marker: {
+          states: {
+            select: {
+              fill: '#ffffff'
+            }
+          }
+        },
+        states: {
+            select: {
+                color: '#ffffff'
+            }
+        }
+      },
       column: {
         cursor: 'pointer'
+      },
+      line: {
+        animation: false
       }
     },
     series: [{
       name: 'Volume',
       type: 'column',
       yAxis: 1,
-      data: exchangeVolumes,
+      data: volumes,
       tooltip: {
         valueSuffix: ' BTC'
       },
@@ -83,8 +108,8 @@ const Line = ({data, changeSelected, selected}) => {
       }
     }, {
       name: 'Current Price',
-      type: 'column',
-      data: exchangePrices,
+      type: 'line',
+      data: prices,
       tooltip: {
         valueSuffix: ' USD'
       },

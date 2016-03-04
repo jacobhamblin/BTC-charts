@@ -4,11 +4,11 @@ import ReactHighcharts from 'react-highcharts'
 
 import '../scss/pie.scss'
 
-const Pie = ({data, changeSelected, selected}) => {
+const Pie = ({data, changeSelected, selected, colors}) => {
   const appChangeSelected = changeSelected
   let aggregate = []
   for (let key in data) {
-    if (data.hasOwnProperty(key) && key !== "timestamp") {
+    if (data.hasOwnProperty(key)) {
       let obj = {}
       obj['name'] = data[key]['display_name']
       obj['y'] = data[key]['volume_percent']
@@ -26,13 +26,9 @@ const Pie = ({data, changeSelected, selected}) => {
           plotBackgroundColor: null,
           plotBorderWidth: null,
           plotShadow: false,
-          type: 'pie',
+          type: 'pie'
       },
-      colors: [
-        '#AAFF99', '#99FFAA', '#99FFCC', '#99FFEE', '#99EEFF',
-        '#99CCFF', '#99AAFF', '#AA99FF', '#CC99FF', '#EE99FF', 
-        '#FF99EE', '#FF99CC', '#FF99AA', '#FF9999'
-      ],
+      colors: colors,
       title: {
           text: 'Market Share of Major Exchanges'
       },

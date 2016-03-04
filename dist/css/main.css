@@ -5,46 +5,53 @@ nav ul li {
   box-sizing: border-box;
   border-bottom: 0px solid; }
   nav ul li:nth-of-type(1) {
-    border-color: #AAFF99; }
+    border-color: #B4F0A8; }
   nav ul li:nth-of-type(2) {
-    border-color: #99FFAA; }
+    border-color: #A8F0B4; }
   nav ul li:nth-of-type(3) {
-    border-color: #99FFCC; }
+    border-color: #A8F0CC; }
   nav ul li:nth-of-type(4) {
-    border-color: #99FFEE; }
+    border-color: #A8F0E4; }
   nav ul li:nth-of-type(5) {
-    border-color: #99EEFF; }
+    border-color: #A8E4F0; }
   nav ul li:nth-of-type(6) {
-    border-color: #99CCFF; }
+    border-color: #A8CCF0; }
   nav ul li:nth-of-type(7) {
-    border-color: #99AAFF; }
+    border-color: #A8C0F0; }
   nav ul li:nth-of-type(8) {
-    border-color: #AA99FF; }
+    border-color: #A8A8F0; }
   nav ul li:nth-of-type(9) {
-    border-color: #CC99FF; }
+    border-color: #C0A8F0; }
   nav ul li:nth-of-type(10) {
-    border-color: #EE99FF; }
+    border-color: #F0A8F0; }
   nav ul li:nth-of-type(11) {
     border-color: #FF99EE; }
   nav ul li:nth-of-type(12) {
-    border-color: #FF99CC; }
+    border-color: #F0A8D8; }
   nav ul li:nth-of-type(13) {
-    border-color: #FF99AA; }
+    border-color: #F0A8C0; }
   nav ul li:nth-of-type(14) {
-    border-color: #FF9999; }
+    border-color: #F0A8A8; }
 
 nav ul li.selected {
   border-width: 4px; }
 div.pie {
-  position: relative; }
+  position: relative;
+  display: inline-block; }
   div.pie svg text {
     margin-bottom: -15px; }
   div.pie svg > text {
     display: none; }
   div.pie svg > text.highcharts-title {
     display: block; }
-.dataShow {
+div.line {
+  position: relative;
   display: block; }
+.dataShow {
+  display: inline-block;
+  position: relative; }
+  .dataShow h2 a {
+    text-decoration: none; }
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -103,3 +110,16 @@ input[type="submit"]:focus {
 /* Remove dotted outline from submits in firefox */
 #login input[type="submit"]::-moz-focus-inner {
   border: 0; }
+
+section {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+body {
+  margin: 0; }
+  body #root {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative; }

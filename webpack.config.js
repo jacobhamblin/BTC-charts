@@ -7,8 +7,7 @@ module.exports = {
   devtool : 'eval-source-map',
 
   entry: [
-    './src/js/index.js',
-    './src/scss/main.scss',
+    './src/js/index.js'
   ],
   output: {
     filename: 'bundle.js',
