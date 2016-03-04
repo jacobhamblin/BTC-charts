@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 
-import '../scss/line.scss'
+import '../../../scss/components/exchanges/priceToVolume.scss'
 
-const Line = ({data, changeSelected, selected, colors}) => {
+const PriceToVolume = ({data, changeSelected, selected, colors}) => {
   const appChangeSelected = changeSelected
   let aggregate = [], names = [], volumes = [], prices = [], i = 0
   for (let key in data) {
@@ -132,4 +132,4 @@ const Line = ({data, changeSelected, selected, colors}) => {
   )
 }
 
-export default Line;
+export default PriceToVolume;

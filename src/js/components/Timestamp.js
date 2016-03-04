@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../../scss/components/timestamp.scss'
 
 // function clientTime(timestamp) {
 //   debugger

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../scss/nav.scss'
+import '../../../scss/components/exchanges/nav.scss'
 
 const Nav = ({exchanges, changeSelected, selected, colors}) => {
   let names = [], i = 0;

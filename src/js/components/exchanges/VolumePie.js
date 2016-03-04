@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 
-import '../scss/pie.scss'
+import '../../../scss/components/exchanges/volumePie.scss'
 
-const Pie = ({data, changeSelected, selected, colors}) => {
+const VolumePie = ({data, changeSelected, selected, colors}) => {
   const appChangeSelected = changeSelected
   let aggregate = []
   for (let key in data) {
@@ -64,4 +64,4 @@ const Pie = ({data, changeSelected, selected, colors}) => {
 
 }
 
-export default Pie
+export default VolumePie

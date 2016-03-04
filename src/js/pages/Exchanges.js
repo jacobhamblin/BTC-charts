@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
-import Header from './Header.js'
-import Nav from './Nav.js'
-import Pie from './Pie.js'
-import Line from './Line.js'
-import Timestamp from './Timestamp.js'
-import DataShow from './DataShow.js'
-import '../scss/app.scss'
+import Nav from '../components/exchanges/Nav.js'
+import VolumePie from '../components/exchanges/VolumePie.js'
+import PriceToVolume from '../components/exchanges/PriceToVolume.js'
+import Timestamp from '../components/Timestamp.js'
+import DataShow from '../components/exchanges/DataShow.js'
+import '../../scss/pages/exchanges.scss'
 
-class App extends Component {
+class Exchanges extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -93,7 +92,7 @@ class App extends Component {
 
     return (
       <div>
-        <Header>
+        <header>
           <h2>graphet</h2>
           <Nav
             exchanges={this.state.exchanges}
@@ -101,9 +100,9 @@ class App extends Component {
             selected={this.state.selected}
           />
           <Timestamp timestamp={this.state.timestamp}/>
-        </Header>
+        </header>
         <section>
-          <Pie
+          <VolumePie
             changeSelected={this.changeSelected}
             data={this.state.exchanges}
             selected={this.state.selected}
@@ -111,7 +110,7 @@ class App extends Component {
           />
           {dataShow}
         </section>
-        <Line
+        <PriceToVolume
           changeSelected={this.changeSelected}
           data={this.state.exchanges}
           selected={this.state.selected}
@@ -123,4 +122,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Exchanges
