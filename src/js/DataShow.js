@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../scss/dataShow.scss'
 
 const DataShow = ({data}) => {
   return (
@@ -11,10 +12,10 @@ const DataShow = ({data}) => {
       </ul>
       <ul>
         <li>Volume: {data.volume_btc}</li>
-        <li>Percent of all BTC Transactions: {data.volume_percent}</li>
+        <li>Portion of all BTC Transactions: {data.volume_percent}%</li>
       </ul>
     </div>
   )
 }
 
-export default DataShow
+export default DataShow;

@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom'
 import Header from './Header.js'
 import Nav from './Nav.js'
 import Pie from './Pie.js'
+import Line from './Line.js'
 import Timestamp from './Timestamp.js'
-// import DataShow from './DataShow.js'
+import DataShow from './DataShow.js'
 
 class App extends Component {
   constructor(props) {
@@ -67,13 +68,13 @@ class App extends Component {
   }
 
   render() {
-    // let selectedExchangeData, DataShow
-    // for (let key in this.state.exchanges) {
-    //   if (this.state.exchanges[key]['display_name'] === this.state.selected) {
-    //     selectedExchangeData = this.state.exchanges[key]
-    //     DataShow = <DataShow data={selectedExchangeData}/>
-    //   }
-    // }
+    let selectedExchangeData, dataShow
+    for (let key in this.state.exchanges) {
+      if (this.state.exchanges[key]['display_name'] === this.state.selected) {
+        selectedExchangeData = this.state.exchanges[key]
+        dataShow = <DataShow data={selectedExchangeData}/>
+      }
+    }
 
     return (
       <div>
@@ -87,13 +88,17 @@ class App extends Component {
           />
           <Timestamp timestamp={this.state.timestamp}/>
         </Header>
-
         <Pie
           changeSelected={this.changeSelected}
           data={this.state.exchanges}
           selected={this.state.selected}
         />
-
+        {dataShow}
+        <Line
+          changeSelected={this.changeSelected}
+          data={this.state.exchanges}
+          selected={this.state.selected}
+        />
         {this.props.children}
       </div>
     )
@@ -104,3 +109,5 @@ ReactDOM.render(
   <App/>,
   document.querySelector('#root')
 );
+
+export default App

@@ -43,6 +43,8 @@ div.pie {
     display: none; }
   div.pie svg > text.highcharts-title {
     display: block; }
+.dataShow {
+  display: block; }
 *, *:before, *:after {
   box-sizing: border-box; }
 
