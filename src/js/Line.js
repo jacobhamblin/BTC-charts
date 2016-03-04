@@ -61,6 +61,11 @@ const Line = ({data, changeSelected, selected}) => {
     tooltip: {
       shared: true
     },
+    plotOptions: {
+      column: {
+        cursor: 'pointer'
+      }
+    },
     series: [{
       name: 'Volume',
       type: 'column',
@@ -72,7 +77,7 @@ const Line = ({data, changeSelected, selected}) => {
       point: {
         events: {
           click: function (e) {
-            appChangeSelected(this.name);
+            appChangeSelected(this.category);
           }
         }
       }
@@ -82,6 +87,13 @@ const Line = ({data, changeSelected, selected}) => {
       data: exchangePrices,
       tooltip: {
         valueSuffix: ' USD'
+      },
+      point: {
+        events: {
+          click: function (e) {
+            appChangeSelected(this.category);
+          }
+        }
       }
     }]
   }
