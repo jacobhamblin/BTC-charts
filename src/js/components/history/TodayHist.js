@@ -4,11 +4,7 @@ import ReactHighcharts from 'react-highcharts'
 import '../../../scss/components/history/todayHist.scss'
 
 
-const TodayHist = ({data}) => {
-  data = data.slice(1, data.length)
-
-  window.data = data
-
+const TodayHist = ({data, colors}) => {
   const config = {
     chart: {
       zoomType: 'x'
@@ -17,9 +13,15 @@ const TodayHist = ({data}) => {
       text: 'BTC Price in the last 24 Hours'
     },
     xAxis: {
-      type: 'datetime'
+      type: 'datetime',
+      title: {
+        text: 'Hour in GMT'
+      }
     },
     yAxis: {
+      labels: {
+        format: '$ {value}'
+      },
       title: {
         text: 'Price'
       }
@@ -37,8 +39,8 @@ const TodayHist = ({data}) => {
             y2: 1
           },
           stops: [
-            [0, Highcharts.getOptions().colors[0]],
-            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+            [0, colors[3]],
+            [1, Highcharts.Color(colors[3]).setOpacity(0).get('rgba')]
           ]
         },
         marker: {
@@ -56,7 +58,7 @@ const TodayHist = ({data}) => {
 
     series: [{
       type: 'area',
-      name: 'USD to EUR',
+      name: 'USD to BTC',
       data: data
     }]
   }

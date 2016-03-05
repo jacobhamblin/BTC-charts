@@ -1,4 +1,8 @@
-div.volumePie {
+@import '../chartMixin.scss';
+
+.volumePie {
+  @include noAd;
+
   position: relative;
   display: inline-block;
 

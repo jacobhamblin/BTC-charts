@@ -1,4 +1,8 @@
-div.priceToVolume {
+@import '../chartMixin.scss';
+
+.priceToVolume {
+  @include noAd;
+
   position: relative;
   display: block;
 }

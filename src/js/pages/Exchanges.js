@@ -79,7 +79,6 @@ class Exchanges extends Component {
     return (
       <div>
         <header>
-          <h2>graphet</h2>
           <Nav
             exchanges={this.state.exchanges}
             changeSelected={this.changeSelected}

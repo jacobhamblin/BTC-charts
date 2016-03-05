@@ -1,0 +1,5 @@
+@mixin noAd {
+  svg > text { display: none; }
+  svg > text.highcharts-title { display: block; }
+  svg > text.highcharts-subtitle { display: block; }
+}

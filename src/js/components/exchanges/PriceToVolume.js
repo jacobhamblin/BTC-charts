@@ -40,7 +40,7 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
     }],
     yAxis: [{
       labels: {
-        format: '${value}',
+        format: '$ {value}',
         style: {
           color: Highcharts.getOptions().colors[1]
         }
