@@ -5,6 +5,7 @@ import VolumePie from '../components/exchanges/VolumePie.js'
 import PriceToVolume from '../components/exchanges/PriceToVolume.js'
 import Timestamp from '../components/Timestamp.js'
 import DataShow from '../components/exchanges/DataShow.js'
+import getReq from '../util/getReq.js'
 import '../../scss/pages/exchanges.scss'
 
 class Exchanges extends Component {
@@ -36,34 +37,22 @@ class Exchanges extends Component {
 
   loadData() {
     const component = this
-    const request = new XMLHttpRequest()
-    request.open('GET', 'https://api.bitcoinaverage.com/exchanges/USD', true);
 
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        window.exch = JSON.parse(request.responseText)
-        let exchanges = JSON.parse(request.responseText)
-
+    getReq(
+      'https://api.bitcoinaverage.com/exchanges/USD',
+      function(reponse) {
+        let exchanges = JSON.parse(reponse)
         component.processData(exchanges)
-      } else {
-        console.log('We reached our target server, but it returned an error')
       }
-    };
-
-    request.onerror = function() {
-      console.log('There was a connection error of some sort')
-    };
-
-    request.send();
+    )
   }
 
   processData(exchanges) {
     let timestamp = exchanges['timestamp']
-    let negligibleExchanges = [
-      'bitkonan', 'bitex', 'hitbtc', 'rocktrading', 'cointrader', 'bitquick',
-      'independentreserve', 'loyalbit', 'quadrigacx', 'campbx', 'timestamp'
-    ]
-    negligibleExchanges.map( exch => delete exchanges[exch] )
+    delete exchanges['timestamp']
+    for (let key in exchanges) {
+      if (parseInt(exchanges[key]['volume_percent']) < 2) delete exchanges[key]
+    }
 
     this.setState({
       exchanges: exchanges,
@@ -102,13 +91,13 @@ class Exchanges extends Component {
           <Timestamp timestamp={this.state.timestamp}/>
         </header>
         <section>
+          {dataShow}
           <VolumePie
             changeSelected={this.changeSelected}
             data={this.state.exchanges}
             selected={this.state.selected}
             colors={this.colors}
           />
-          {dataShow}
         </section>
         <PriceToVolume
           changeSelected={this.changeSelected}

@@ -57,7 +57,7 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
     };
 
   return (
-    <div className="pie">
+    <div className="volumePie">
       <ReactHighcharts config={config}/>
     </div>
   )

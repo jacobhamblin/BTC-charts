@@ -126,7 +126,7 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
 
 
   return (
-    <div className="line">
+    <div className="priceToVolume">
       <ReactHighcharts config={config}/>
     </div>
   )
