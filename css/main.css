@@ -39,17 +39,29 @@ nav ul li {
 
 nav ul li.selected {
   border-width: 4px; }
-div.priceToVolume {
+.priceToVolume {
   position: relative;
   display: block; }
-div.volumePie {
+  .priceToVolume svg > text {
+    display: none; }
+  .priceToVolume svg > text.highcharts-title {
+    display: block; }
+  .priceToVolume svg > text.highcharts-subtitle {
+    display: block; }
+.volumePie {
   position: relative;
   display: inline-block; }
-  div.volumePie svg text {
-    margin-bottom: -15px; }
-  div.volumePie svg > text {
+  .volumePie svg > text {
     display: none; }
-  div.volumePie svg > text.highcharts-title {
+  .volumePie svg > text.highcharts-title {
+    display: block; }
+  .volumePie svg > text.highcharts-subtitle {
+    display: block; }
+  .volumePie svg text {
+    margin-bottom: -15px; }
+  .volumePie svg > text {
+    display: none; }
+  .volumePie svg > text.highcharts-title {
     display: block; }
 nav.siteNav ul li {
   display: inline-block; }
@@ -60,6 +72,22 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap; }
+.allTimeHist svg > text {
+  display: none; }
+
+.allTimeHist svg > text.highcharts-title {
+  display: block; }
+
+.allTimeHist svg > text.highcharts-subtitle {
+  display: block; }
+.todayHist svg > text {
+  display: none; }
+
+.todayHist svg > text.highcharts-title {
+  display: block; }
+
+.todayHist svg > text.highcharts-subtitle {
+  display: block; }
 body {
   margin: 0; }
   body #root {
