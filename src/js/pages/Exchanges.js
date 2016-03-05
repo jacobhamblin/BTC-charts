@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 
-import Nav from '../components/exchanges/Nav.js'
-import VolumePie from '../components/exchanges/VolumePie.js'
-import PriceToVolume from '../components/exchanges/PriceToVolume.js'
-import Timestamp from '../components/Timestamp.js'
-import DataShow from '../components/exchanges/DataShow.js'
-import getReq from '../util/getReq.js'
+import { VolumePie, PriceToVolume, DataShow, Nav } from '../components/exchanges'
+import { Timestamp } from '../components'
+import { getRequest } from '../utils'
 import '../../scss/pages/exchanges.scss'
 
 class Exchanges extends Component {
@@ -38,7 +35,7 @@ class Exchanges extends Component {
   loadData() {
     const component = this
 
-    getReq(
+    getRequest(
       'https://api.bitcoinaverage.com/exchanges/USD',
       function(reponse) {
         let exchanges = JSON.parse(reponse)

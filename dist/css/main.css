@@ -1,5 +1,8 @@
-nav.siteNav ul li {
-  display: inline-block; }
+.dataShow {
+  display: inline-block;
+  position: relative; }
+  .dataShow thead a {
+    text-decoration: none; }
 nav ul li {
   display: inline-block;
   cursor: pointer;
@@ -36,6 +39,9 @@ nav ul li {
 
 nav ul li.selected {
   border-width: 4px; }
+div.priceToVolume {
+  position: relative;
+  display: block; }
 div.volumePie {
   position: relative;
   display: inline-block; }
@@ -45,16 +51,10 @@ div.volumePie {
     display: none; }
   div.volumePie svg > text.highcharts-title {
     display: block; }
-div.priceToVolume {
-  position: relative;
-  display: block; }
+nav.siteNav ul li {
+  display: inline-block; }
 .timestamp {
   display: block; }
-.dataShow {
-  display: inline-block;
-  position: relative; }
-  .dataShow thead a {
-    text-decoration: none; }
 section {
   display: -webkit-box;
   display: flex;

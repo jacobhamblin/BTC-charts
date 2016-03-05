@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import getReq from '../util/getReq.js'
-import TodayHist from '../components/history/TodayHist.js'
-import AllTimeSpline from '../components/history/AllTimeSpline.js'
+import { TodayHist, AllTimeHist } from '../components/history'
+import { getRequest } from '../utils'
 
 class History extends Component {
   constructor(props) {
@@ -32,11 +31,11 @@ class History extends Component {
 
   loadData() {
     const component = this
-    getReq(
+    getRequest(
       'https://api.bitcoinaverage.com/history/USD/per_minute_24h_sliding_window.csv',
       (csv) => component.processToday(csv)
     )
-    getReq(
+    getRequest(
       'https://api.bitcoinaverage.com/history/USD/per_day_all_time_history.csv',
       (csv) => component.processAllTime(csv)
     )

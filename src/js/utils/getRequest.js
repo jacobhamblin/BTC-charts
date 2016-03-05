@@ -1,4 +1,4 @@
-function getReq(url, callback) {
+function getRequest(url, callback) {
   const component = this
   const request = new XMLHttpRequest()
   request.open('GET', url, true);
@@ -19,4 +19,4 @@ function getReq(url, callback) {
 }
 
 
-export default getReq
+export default getRequest

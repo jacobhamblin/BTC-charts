@@ -4,13 +4,13 @@ import ReactHighcharts from 'react-highcharts'
 
 import '../../../scss/components/history/allTimeSpline.scss'
 
-const AllTimeSpline = ({data}) => {
+const AllTimeHist = ({data}) => {
   data = data.slice(1, data.length)
 
   return (
-    <div className="allTimeSpline">
+    <div className="allTimeHist">
     </div>
   )
 }
 
-export default AllTimeSpline
+export default AllTimeHist
