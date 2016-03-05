@@ -4,7 +4,6 @@ nav ul li {
   display: inline-block;
   cursor: pointer;
   padding: 1em;
-  box-sizing: border-box;
   border-bottom: 0px solid; }
   nav ul li:nth-of-type(1) {
     border-color: #B4F0A8; }
@@ -37,16 +36,16 @@ nav ul li {
 
 nav ul li.selected {
   border-width: 4px; }
-div.pie {
+div.volumePie {
   position: relative;
   display: inline-block; }
-  div.pie svg text {
+  div.volumePie svg text {
     margin-bottom: -15px; }
-  div.pie svg > text {
+  div.volumePie svg > text {
     display: none; }
-  div.pie svg > text.highcharts-title {
+  div.volumePie svg > text.highcharts-title {
     display: block; }
-div.line {
+div.priceToVolume {
   position: relative;
   display: block; }
 .timestamp {
