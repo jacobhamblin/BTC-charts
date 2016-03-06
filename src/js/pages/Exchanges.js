@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { VolumePie, PriceToVolume, DataShow, Nav } from '../components/exchanges'
-import { Timestamp } from '../components'
 import { getRequest } from '../utils'
 import '../../scss/pages/exchanges.scss'
 
@@ -29,7 +27,6 @@ class Exchanges extends Component {
     this.setState({
       selected: string
     })
-    window.timestamp = this.state.timestamp
   }
 
   loadData() {
@@ -48,7 +45,7 @@ class Exchanges extends Component {
     let timestamp = exchanges['timestamp']
     delete exchanges['timestamp']
     for (let key in exchanges) {
-      if (parseInt(exchanges[key]['volume_percent']) < 2) delete exchanges[key]
+      if (parseInt(exchanges[key]['volume_percent']) < 3) delete exchanges[key]
     }
 
     this.setState({
@@ -65,7 +62,8 @@ class Exchanges extends Component {
         color = this.colors[i]
         dataShow = <DataShow
           data={selectedExchangeData}
-          color={color} />
+          color={color}
+          timestamp={this.state.timestamp}/>
       }
       i++
     }
@@ -84,7 +82,6 @@ class Exchanges extends Component {
             changeSelected={this.changeSelected}
             selected={this.state.selected}
           />
-          <Timestamp timestamp={this.state.timestamp}/>
         </header>
         <section>
           {dataShow}

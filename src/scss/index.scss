@@ -4,12 +4,33 @@ body {
   background-color: #f7f7f7;
   color: #333;
 
+  a {
+    text-decoration: none;
+  }
+
   #root {
     width: 80%;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     background-color: #fff;
-    padding: 24px 12px;
+    padding: 24px 12px 12px 12px;
+
+
+    .app {
+
+      footer {
+        text-align:center;
+        margin-top: 12px;
+
+        svg {
+          fill: #777;
+
+          &:hover {
+            fill: #000;
+          }
+        }
+      }
+    }
   }
 }

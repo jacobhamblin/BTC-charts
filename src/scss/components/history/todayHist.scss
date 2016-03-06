@@ -2,4 +2,7 @@
 
 .todayHist {
   @include noAd;
+
+  height: 400px;
+  border-bottom: 1px solid #777;
 }

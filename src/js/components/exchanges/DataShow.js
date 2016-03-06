@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../../../scss/components/exchanges/dataShow.scss'
+import { Timestamp } from '../exchanges'
 
-const DataShow = ({data, color}) => {
+const DataShow = ({data, color, timestamp}) => {
   let style = {
     color: color
   }
@@ -41,6 +42,7 @@ const DataShow = ({data, color}) => {
           </tbody>
         </table>
       </div>
+      <Timestamp timestamp={timestamp}/>
     </div>
   )
 }

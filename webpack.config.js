@@ -24,6 +24,7 @@ module.exports = {
         test: /\.js$/, loader: 'babel', exclude: /node_modules/,
         query: { presets: ['es2015', 'react', 'stage-0'] }
       },
+      { test: /\.md$/, loader: 'raw-loader' },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css$/, loader: 'css-loader!postcss-loader' },
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!postcss-loader!sass') },
