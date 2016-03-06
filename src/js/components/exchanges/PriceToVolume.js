@@ -17,6 +17,12 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
       volume['y'] = data[key]['volume_btc']
       pricesObj['y'] = data[key]['rates']['last']
       volume['color'] = colors[i]
+      let states = {
+        select: {
+          color: colors[i]
+        }
+      }
+      volume['states'] = states
       pricesObj['color'] = '#333333'
 
       volumes.push(volume)
@@ -79,9 +85,8 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
         },
         states: {
             select: {
-              color: '#FFDE3C',
-              borderWidth: 0,
-              borderColor: '#FFDE3C'
+              borderWidth: 5,
+              borderColor: '#777777'
             }
         }
       },
@@ -90,10 +95,10 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
       },
       line: {
         animation: false,
-        color: '#aaaaaa',
+        color: '#DDDDDD',
         cursor: "pointer",
         marker: {
-          fillColor: '#777777'
+          fillColor: '#CCCCCC'
         }
       }
     },
