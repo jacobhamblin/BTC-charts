@@ -8,18 +8,20 @@
 
   .tableContainer {
     width: 100%;
-    background-color: #333;
 
     table {
       padding: 1em;
-      color: #f7f7f7;
+      color: #333;
       margin: 0 auto;
+      font-size: 14px;
 
       thead {
 
         tr {
 
           td {
+            padding: 4px 0;
+            font-size: 20px;
 
             &:nth-of-type(1) {
               width: 60%;

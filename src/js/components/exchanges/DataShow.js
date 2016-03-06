@@ -13,7 +13,7 @@ const DataShow = ({data, color, timestamp}) => {
         <table>
           <thead>
             <tr>
-              <td>
+              <td colSpan="2">
                 <a href={data.display_URL} style={style}>{data.display_name}</a>
               </td>
             </tr>
