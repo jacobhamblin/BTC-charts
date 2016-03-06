@@ -79,7 +79,7 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
         },
         states: {
             select: {
-                color: '#ffffff'
+                color: '#777777'
             }
         }
       },
@@ -87,7 +87,11 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
         cursor: 'pointer'
       },
       line: {
-        animation: false
+        animation: false,
+        color: '#aaaaaa',
+        marker: {
+          fillColor: '#777777'
+        }
       }
     },
     series: [{
