@@ -11,7 +11,7 @@ const History = () => {
 
   return (
     <div className="history">
-      <h2>History - USD to BTC</h2>
+      <h1>History - USD to BTC</h1>
       <div className="charts">
         <TodayHist
         colors={colors}/>
