@@ -73,18 +73,20 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
         marker: {
           states: {
             select: {
-              fill: '#ffffff'
+              fill: '#FFDE3C',
             }
           }
         },
         states: {
             select: {
-                color: '#777777'
+              color: '#FFDE3C',
+              borderWidth: 0,
+              borderColor: '#FFDE3C'
             }
         }
       },
       column: {
-        cursor: 'pointer'
+        cursor: 'pointer',
       },
       line: {
         animation: false,

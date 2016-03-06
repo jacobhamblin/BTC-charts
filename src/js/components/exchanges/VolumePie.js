@@ -29,7 +29,7 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
       },
       colors: colors,
       title: {
-          text: 'Market Share of Major Exchanges'
+          text: 'Market Share'
       },
       tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
