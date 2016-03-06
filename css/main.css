@@ -17,13 +17,12 @@
       .dataShow .tableContainer table thead tr td:nth-of-type(2) {
         width: 40%; }
       .dataShow .tableContainer table thead tr td a {
-        font-weight: bold;
-        text-decoration: none; }
+        font-weight: bold; }
 
 @media (max-width: 1100px) {
   .dataShow {
     width: 100%;
-    height: 166px;
+    min-height: 212px;
     margin: 0 auto; } }
 nav.exchanges ul {
   padding-left: 0;
@@ -110,18 +109,11 @@ nav.exchanges ul {
     width: 100%;
     max-width: 100%;
     border: 0px; } }
-nav.siteNav ul {
-  margin: 0;
-  border-bottom: 1px solid #333;
-  text-align: right; }
-  nav.siteNav ul li {
-    display: inline-block;
-    padding: 12px; }
-    nav.siteNav ul li a {
-      text-decoration: none;
-      color: #333; }
 .timestamp {
-  display: block; }
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 14px; }
 section {
   display: -webkit-box;
   display: flex;
@@ -133,33 +125,52 @@ section {
 @media (max-width: 1100px) {
   section {
     margin-bottom: 0px; } }
-.allTimeHist svg > text {
-  display: none; }
-
-.allTimeHist svg > text.highcharts-title {
-  display: block; }
-
-.allTimeHist svg > text.highcharts-subtitle {
-  display: block; }
-.todayHist svg > text {
-  display: none; }
-
-.todayHist svg > text.highcharts-title {
-  display: block; }
-
-.todayHist svg > text.highcharts-subtitle {
-  display: block; }
+.allTimeHist {
+  height: 400px; }
+  .allTimeHist svg > text {
+    display: none; }
+  .allTimeHist svg > text.highcharts-title {
+    display: block; }
+  .allTimeHist svg > text.highcharts-subtitle {
+    display: block; }
+.todayHist {
+  height: 400px;
+  border-bottom: 1px solid #777; }
+  .todayHist svg > text {
+    display: none; }
+  .todayHist svg > text.highcharts-title {
+    display: block; }
+  .todayHist svg > text.highcharts-subtitle {
+    display: block; }
 .history .charts {
   border: 1px solid #777; }
+nav.siteNav ul {
+  margin: 0;
+  border-bottom: 1px solid #333;
+  text-align: right; }
+  nav.siteNav ul li {
+    display: inline-block;
+    padding: 12px; }
+    nav.siteNav ul li a {
+      color: #333; }
 body {
   margin: 0;
   font-family: Helvetica, Arial;
   background-color: #f7f7f7;
   color: #333; }
+  body a {
+    text-decoration: none; }
   body #root {
     width: 80%;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     background-color: #fff;
-    padding: 24px 12px; }
+    padding: 24px 12px 12px 12px; }
+    body #root .app footer {
+      text-align: center;
+      margin-top: 12px; }
+      body #root .app footer svg {
+        fill: #777; }
+        body #root .app footer svg:hover {
+          fill: #000; }
