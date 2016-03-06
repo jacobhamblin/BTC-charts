@@ -26,7 +26,8 @@
   .dataShow {
     width: 100%;
     min-height: 212px;
-    margin: 0 auto; } }
+    margin: 0 auto;
+    border: 0px; } }
 nav.exchanges ul {
   padding-left: 0;
   text-align: center;
