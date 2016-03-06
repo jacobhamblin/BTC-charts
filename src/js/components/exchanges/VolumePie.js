@@ -38,7 +38,14 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
           pie: {
               allowPointSelect: true,
               cursor: 'pointer',
-              innerSize: 100
+              innerSize: 100,
+              dataLabels: {
+                style: {
+                  fontWeight: "100",
+                  fontSize: "12px",
+                  color: "#777777"
+                }
+              }
           }
       },
       series: [{
@@ -48,6 +55,7 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
           point: {
             events: {
               click: function (e) {
+                e.preventDefault()
                 appChangeSelected(this.name);
               }
             }

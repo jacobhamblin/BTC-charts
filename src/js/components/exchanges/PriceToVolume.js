@@ -105,6 +105,7 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
       point: {
         events: {
           click: function (e) {
+            e.preventDefault()
             appChangeSelected(this.category);
           }
         }
@@ -119,6 +120,7 @@ const PriceToVolume = ({data, changeSelected, selected, colors}) => {
       point: {
         events: {
           click: function (e) {
+            e.preventDefault()
             appChangeSelected(this.category);
           }
         }

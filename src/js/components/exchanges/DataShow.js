@@ -20,15 +20,15 @@ const DataShow = ({data, color, timestamp}) => {
           </thead>
           <tbody>
             <tr>
-              <td>ask:</td>
+              <td>Ask:</td>
               <td>{data.rates.ask}</td>
             </tr>
             <tr>
-              <td>bid:</td>
+              <td>Bid:</td>
               <td>{data.rates.bid}</td>
             </tr>
             <tr>
-              <td>last:</td>
+              <td>Last:</td>
               <td>{data.rates.last}</td>
             </tr>
             <tr>
