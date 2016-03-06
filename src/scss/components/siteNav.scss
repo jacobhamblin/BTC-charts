@@ -1,9 +1,18 @@
-nav {
+nav.siteNav {
 
   ul {
+    margin: 0;
+    border-bottom: 1px solid #333;
+    text-align: right;
 
     li {
       display: inline-block;
+      padding: 12px;
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TodayHist, AllTimeHist } from '../components/history'
+import '../../scss/pages/history.scss'
 
 const History = () => {
   const colors = [
@@ -9,12 +10,14 @@ const History = () => {
   ]
 
   return (
-    <div>
+    <div className="history">
       <h2>History - USD to BTC</h2>
-      <TodayHist
-      colors={colors}/>
-      <AllTimeHist
-      colors={colors}/>
+      <div className="charts">
+        <TodayHist
+        colors={colors}/>
+        <AllTimeHist
+        colors={colors}/>
+      </div>
     </div>
   )
 }

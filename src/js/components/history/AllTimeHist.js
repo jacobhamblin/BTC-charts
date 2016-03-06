@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 import { getRequest, csvArrToMSAndValue } from '../../utils'
-
-
 import '../../../scss/components/history/allTimeHist.scss'
 
 class AllTimeHist extends Component {

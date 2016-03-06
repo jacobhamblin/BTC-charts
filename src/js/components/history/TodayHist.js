@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
-import '../../../scss/components/history/todayHist.scss'
 import { getRequest, csvArrToMSAndValue } from '../../utils'
+import '../../../scss/components/history/todayHist.scss'
 
 
 class TodayHist extends Component {

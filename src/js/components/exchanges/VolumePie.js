@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
-
 import '../../../scss/components/exchanges/volumePie.scss'
 
 const VolumePie = ({data, changeSelected, selected, colors}) => {

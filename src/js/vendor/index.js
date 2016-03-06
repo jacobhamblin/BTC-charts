@@ -1,0 +1,1 @@
+export FastClick from './fastclick'

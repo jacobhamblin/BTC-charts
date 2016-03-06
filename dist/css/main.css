@@ -2,7 +2,9 @@
   display: inline-block;
   position: relative;
   background-color: #777;
-  min-width: 17.825rem; }
+  min-width: 335.2px;
+  max-width: 900px;
+  border: 1px solid #777; }
   .dataShow .tableContainer {
     width: 100%;
     background-color: #333; }
@@ -17,11 +19,17 @@
       .dataShow .tableContainer table thead tr td a {
         font-weight: bold;
         text-decoration: none; }
+
+@media (max-width: 1100px) {
+  .dataShow {
+    width: 100%;
+    height: 166px;
+    margin: 0 auto; } }
 nav.exchanges ul {
   padding-left: 0;
   text-align: center;
   min-height: 54px;
-  margin: 14.8px 0; }
+  margin: 12px 0; }
   nav.exchanges ul li {
     display: inline-block;
     cursor: pointer;
@@ -69,11 +77,20 @@ nav.exchanges ul {
     display: block; }
   .priceToVolume svg > text.highcharts-subtitle {
     display: block; }
+
+@media (max-width: 1100px) {
+  .priceToVolume {
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px; } }
 .volumePie {
   position: relative;
   display: inline-block;
   border: 1px solid #777;
-  float: right; }
+  float: right;
+  max-width: 550px;
+  width: 550px;
+  min-width: 400px; }
   .volumePie svg > text {
     display: none; }
   .volumePie svg > text.highcharts-title {
@@ -86,8 +103,23 @@ nav.exchanges ul {
     display: none; }
   .volumePie svg > text.highcharts-title {
     display: block; }
-nav ul li {
-  display: inline-block; }
+
+@media (max-width: 1100px) {
+  .volumePie {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    border: 0px; } }
+nav.siteNav ul {
+  margin: 0;
+  border-bottom: 1px solid #333;
+  text-align: right; }
+  nav.siteNav ul li {
+    display: inline-block;
+    padding: 12px; }
+    nav.siteNav ul li a {
+      text-decoration: none;
+      color: #333; }
 .timestamp {
   display: block; }
 section {
@@ -96,7 +128,11 @@ section {
   -webkit-box-pack: justify;
           justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 14.8px; }
+  margin-bottom: 12px; }
+
+@media (max-width: 1100px) {
+  section {
+    margin-bottom: 0px; } }
 .allTimeHist svg > text {
   display: none; }
 
@@ -113,11 +149,17 @@ section {
 
 .todayHist svg > text.highcharts-subtitle {
   display: block; }
+.history .charts {
+  border: 1px solid #777; }
 body {
   margin: 0;
-  font-family: Helvetica, Arial; }
+  font-family: Helvetica, Arial;
+  background-color: #f7f7f7;
+  color: #333; }
   body #root {
     width: 80%;
     max-width: 900px;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    background-color: #fff;
+    padding: 24px 12px; }

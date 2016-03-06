@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
-
 import '../../../scss/components/exchanges/priceToVolume.scss'
 
 const PriceToVolume = ({data, changeSelected, selected, colors}) => {

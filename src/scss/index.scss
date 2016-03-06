@@ -1,11 +1,15 @@
 body {
   margin: 0;
   font-family: Helvetica, Arial;
+  background-color: #f7f7f7;
+  color: #333;
 
   #root {
     width: 80%;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
+    background-color: #fff;
+    padding: 24px 12px;
   }
 }
