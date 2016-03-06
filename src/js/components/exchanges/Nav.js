@@ -8,7 +8,7 @@ const Nav = ({exchanges, changeSelected, selected, colors}) => {
   }
 
   return (
-    <nav>
+    <nav className="exchanges">
       <ul>
         {names.map(name => (
           <li

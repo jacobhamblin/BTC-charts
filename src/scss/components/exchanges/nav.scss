@@ -1,10 +1,18 @@
-nav {
+nav.exchanges {
+
   ul {
+    padding-left: 0;
+    text-align: center;
+    min-height: 54px;
+    margin: 14.8px 0;
+
     li {
       display: inline-block;
       cursor: pointer;
       padding: 1em;
       border-bottom: 0px solid;
+      margin-bottom: 4px;
+
       &:nth-of-type(1) {
         border-color: #B4F0A8;
       }
@@ -51,6 +59,7 @@ nav {
 
     li.selected {
       border-width: 4px;
+      margin-bottom: 0px;
     }
   }
 }

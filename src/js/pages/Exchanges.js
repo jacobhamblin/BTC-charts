@@ -29,7 +29,7 @@ class Exchanges extends Component {
     this.setState({
       selected: string
     })
-    console.log(this.state.timestamp)
+    window.timestamp = this.state.timestamp
   }
 
   loadData() {
@@ -58,7 +58,7 @@ class Exchanges extends Component {
   }
 
   dataShow() {
-    let selectedExchangeData, dataShow, color, i = 0
+    let selectedExchangeData, color, i = 0, dataShow = <div className="dataShow"></div>
     for (let key in this.state.exchanges) {
       if (this.state.exchanges[key]['display_name'] === this.state.selected) {
         selectedExchangeData = this.state.exchanges[key]

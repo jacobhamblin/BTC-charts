@@ -1,45 +1,66 @@
 .dataShow {
   display: inline-block;
-  position: relative; }
-  .dataShow thead a {
-    text-decoration: none; }
-nav ul li {
-  display: inline-block;
-  cursor: pointer;
-  padding: 1em;
-  border-bottom: 0px solid; }
-  nav ul li:nth-of-type(1) {
-    border-color: #B4F0A8; }
-  nav ul li:nth-of-type(2) {
-    border-color: #A8F0B4; }
-  nav ul li:nth-of-type(3) {
-    border-color: #A8F0CC; }
-  nav ul li:nth-of-type(4) {
-    border-color: #A8F0E4; }
-  nav ul li:nth-of-type(5) {
-    border-color: #A8E4F0; }
-  nav ul li:nth-of-type(6) {
-    border-color: #A8CCF0; }
-  nav ul li:nth-of-type(7) {
-    border-color: #A8C0F0; }
-  nav ul li:nth-of-type(8) {
-    border-color: #A8A8F0; }
-  nav ul li:nth-of-type(9) {
-    border-color: #C0A8F0; }
-  nav ul li:nth-of-type(10) {
-    border-color: #F0A8F0; }
-  nav ul li:nth-of-type(11) {
-    border-color: #FF99EE; }
-  nav ul li:nth-of-type(12) {
-    border-color: #F0A8D8; }
-  nav ul li:nth-of-type(13) {
-    border-color: #F0A8C0; }
-  nav ul li:nth-of-type(14) {
-    border-color: #F0A8A8; }
-
-nav ul li.selected {
-  border-width: 4px; }
+  position: relative;
+  background-color: #777;
+  min-width: 17.825rem; }
+  .dataShow .tableContainer {
+    width: 100%;
+    background-color: #333; }
+    .dataShow .tableContainer table {
+      padding: 1em;
+      color: #f7f7f7;
+      margin: 0 auto; }
+      .dataShow .tableContainer table thead tr td:nth-of-type(1) {
+        width: 60%; }
+      .dataShow .tableContainer table thead tr td:nth-of-type(2) {
+        width: 40%; }
+      .dataShow .tableContainer table thead tr td a {
+        font-weight: bold;
+        text-decoration: none; }
+nav.exchanges ul {
+  padding-left: 0;
+  text-align: center;
+  min-height: 54px;
+  margin: 14.8px 0; }
+  nav.exchanges ul li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1em;
+    border-bottom: 0px solid;
+    margin-bottom: 4px; }
+    nav.exchanges ul li:nth-of-type(1) {
+      border-color: #B4F0A8; }
+    nav.exchanges ul li:nth-of-type(2) {
+      border-color: #A8F0B4; }
+    nav.exchanges ul li:nth-of-type(3) {
+      border-color: #A8F0CC; }
+    nav.exchanges ul li:nth-of-type(4) {
+      border-color: #A8F0E4; }
+    nav.exchanges ul li:nth-of-type(5) {
+      border-color: #A8E4F0; }
+    nav.exchanges ul li:nth-of-type(6) {
+      border-color: #A8CCF0; }
+    nav.exchanges ul li:nth-of-type(7) {
+      border-color: #A8C0F0; }
+    nav.exchanges ul li:nth-of-type(8) {
+      border-color: #A8A8F0; }
+    nav.exchanges ul li:nth-of-type(9) {
+      border-color: #C0A8F0; }
+    nav.exchanges ul li:nth-of-type(10) {
+      border-color: #F0A8F0; }
+    nav.exchanges ul li:nth-of-type(11) {
+      border-color: #FF99EE; }
+    nav.exchanges ul li:nth-of-type(12) {
+      border-color: #F0A8D8; }
+    nav.exchanges ul li:nth-of-type(13) {
+      border-color: #F0A8C0; }
+    nav.exchanges ul li:nth-of-type(14) {
+      border-color: #F0A8A8; }
+  nav.exchanges ul li.selected {
+    border-width: 4px;
+    margin-bottom: 0px; }
 .priceToVolume {
+  border: 1px solid #777;
   position: relative;
   display: block; }
   .priceToVolume svg > text {
@@ -50,7 +71,9 @@ nav ul li.selected {
     display: block; }
 .volumePie {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  border: 1px solid #777;
+  float: right; }
   .volumePie svg > text {
     display: none; }
   .volumePie svg > text.highcharts-title {
@@ -63,15 +86,17 @@ nav ul li.selected {
     display: none; }
   .volumePie svg > text.highcharts-title {
     display: block; }
-nav.siteNav ul li {
+nav ul li {
   display: inline-block; }
 .timestamp {
   display: block; }
 section {
   display: -webkit-box;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; }
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 14.8px; }
 .allTimeHist svg > text {
   display: none; }
 
@@ -89,7 +114,8 @@ section {
 .todayHist svg > text.highcharts-subtitle {
   display: block; }
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: Helvetica, Arial; }
   body #root {
     width: 80%;
     max-width: 900px;
