@@ -34,7 +34,11 @@ nav.exchanges ul {
   padding-left: 0;
   text-align: center;
   min-height: 54px;
-  margin: 12px 0; }
+  margin: 12px 0;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
   nav.exchanges ul li {
     display: inline-block;
     cursor: pointer;
