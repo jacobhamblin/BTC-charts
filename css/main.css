@@ -27,7 +27,7 @@
 @media (max-width: 1100px) {
   .dataShow {
     width: 100%;
-    min-height: 212px;
+    min-height: 229px;
     margin: 0 auto;
     border: 0px; } }
 nav.exchanges ul {
@@ -100,7 +100,8 @@ section {
 
 @media (max-width: 1100px) {
   section {
-    margin-bottom: 0px; } }
+    margin-bottom: 0px;
+    min-height: 629px; } }
 .allTimeHist {
   height: 400px; }
   .allTimeHist svg > text {
