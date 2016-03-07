@@ -3,21 +3,21 @@ import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 import '../../../scss/components/exchanges/volumePie.scss'
 
-const VolumePie = ({data, changeSelected, selected, colors}) => {
+const VolumePie = ({data, changeSelected, selected}) => {
   const appChangeSelected = changeSelected
   let aggregate = []
-  for (let key in data) {
-    if (data.hasOwnProperty(key)) {
-      let obj = {}
-      obj['name'] = data[key]['display_name']
-      obj['y'] = data[key]['volume_percent']
-      if (obj['name'] === selected) {
-        obj['selected'] = true
-        obj['sliced'] = true
-      }
-      aggregate.push(obj)
+  data.map(exch => {
+    let obj = {}
+    obj['name'] = exch['display_name']
+    obj['y'] = exch['volume_percent']
+    obj['color'] = exch['color']
+    if (obj['name'] === selected) {
+      obj['selected'] = true
+      obj['sliced'] = true
     }
-  }
+    aggregate.push(obj)
+  })
+
 
   let config =
     {
@@ -27,7 +27,6 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
           plotShadow: false,
           type: 'pie'
       },
-      colors: colors,
       title: {
           text: 'Market Share'
       },
@@ -50,7 +49,6 @@ const VolumePie = ({data, changeSelected, selected, colors}) => {
       },
       series: [{
           name: 'Market Share',
-          colorByPoint: true,
           data: aggregate,
           point: {
             events: {

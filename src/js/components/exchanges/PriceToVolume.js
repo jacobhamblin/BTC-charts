@@ -3,34 +3,31 @@ import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 import '../../../scss/components/exchanges/priceToVolume.scss'
 
-const PriceToVolume = ({data, changeSelected, selected, colors}) => {
+const PriceToVolume = ({data, changeSelected, selected}) => {
   const appChangeSelected = changeSelected
-  let aggregate = [], names = [], volumes = [], prices = [], i = 0
-  for (let key in data) {
-    if (data.hasOwnProperty(key)) {
-      let volume = {}
-      let pricesObj = {}
-      if (data[key]['display_name'] === selected) {
-        volume['selected'] = true
-        pricesObj['selected'] = true
-      }
-      volume['y'] = data[key]['volume_btc']
-      pricesObj['y'] = data[key]['rates']['last']
-      volume['color'] = colors[i]
-      let states = {
-        select: {
-          color: colors[i]
-        }
-      }
-      volume['states'] = states
-      pricesObj['color'] = '#333333'
-
-      volumes.push(volume)
-      prices.push(pricesObj)
-      names.push(data[key]['display_name'])
-      i++
+  let aggregate = [], names = [], volumes = [], prices = []
+  data.map(exch => {
+    let volume = {}
+    let pricesObj = {}
+    if (exch['display_name'] === selected) {
+      volume['selected'] = true
+      pricesObj['selected'] = true
     }
-  }
+    volume['y'] = exch['volume_btc']
+    pricesObj['y'] = exch['rates']['last']
+    volume['color'] = exch['color']
+    let states = {
+      select: {
+        color: exch['color']
+      }
+    }
+    volume['states'] = states
+    pricesObj['color'] = '#333333'
+
+    volumes.push(volume)
+    prices.push(pricesObj)
+    names.push(exch['display_name'])
+  })
 
   let config = {
     chart: {

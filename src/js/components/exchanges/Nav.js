@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import '../../../scss/components/exchanges/nav.scss'
 
-const Nav = ({exchanges, changeSelected, selected, colors}) => {
-  let names = [], i = 0;
-  for (let key in exchanges) {
-    names.push(exchanges[key]['display_name'])
-  }
-
+const Nav = ({exchanges, changeSelected, selected}) => {
+  let i = 0
   return (
     <nav className="exchanges">
       <ul>
-        {names.map(name => (
+        {exchanges.map(name => (
           <li
-            className={name === selected ? "selected" : ""}
-            onClick={e => changeSelected(name)}
+            className={name.display_name === selected ? "selected" : ""}
+            style={{borderColor: name.color}}
+            onClick={e => changeSelected(name.display_name)}
             key={i++}
           >
-            {name}
+            {name.display_name}
           </li>
         ))}
       </ul>

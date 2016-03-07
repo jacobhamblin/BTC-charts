@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "highcharts": "^4.2.3",
-    "highlight.js": "^9.2.0",
     "history": "^2.0.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",

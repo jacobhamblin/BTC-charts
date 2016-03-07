@@ -7,16 +7,11 @@ class Exchanges extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      exchanges: {},
+      exchanges: [],
       selected: null,
       timestamp: null
     }
     this.changeSelected = this.changeSelected.bind(this)
-    this.colors = [
-      '#B4F0A8', '#A8F0B4', '#A8F0CC', '#A8F0E4', '#A8E4F0',
-      '#A8CCF0', '#A8C0F0', '#A8A8F0', '#C0A8F0', '#D8A8F0',
-      '#F0A8F0', '#F0A8D8', '#F0A8C0', '#F0A8A8'
-    ]
   }
 
   componentDidMount() {
@@ -30,75 +25,79 @@ class Exchanges extends Component {
   }
 
   loadData() {
-    const component = this
-
     getRequest(
       'https://api.bitcoinaverage.com/exchanges/USD',
-      function(reponse) {
-        let exchanges = JSON.parse(reponse)
-        component.processData(exchanges)
+      (response) => {
+        let exchanges = JSON.parse(response)
+        this.processData(exchanges)
       }
     )
   }
 
   processData(exchanges) {
-    let timestamp = exchanges['timestamp']
+    let colors = [
+      '#B4F0A8', '#A8F0B4', '#A8F0CC', '#A8F0E4', '#A8E4F0',
+      '#A8CCF0', '#A8C0F0', '#A8A8F0', '#C0A8F0', '#D8A8F0',
+      '#F0A8F0', '#F0A8D8', '#F0A8C0', '#F0A8A8', '#F0C0A8',
+      '#F0D8A8', '#F0F0A8'
+    ]
+    let timestamp = exchanges['timestamp'], exchangesArr = [], i = 0
     delete exchanges['timestamp']
     for (let key in exchanges) {
-      if (parseInt(exchanges[key]['volume_percent']) < 3) delete exchanges[key]
+      if (parseInt(exchanges[key]['volume_percent']) < 3) {
+        delete exchanges[key]
+      } else {
+        exchanges[key]['color'] = colors[i % colors.length]
+        exchangesArr.push(exchanges[key])
+      }
+      i++
     }
 
     this.setState({
-      exchanges: exchanges,
-      timestamp: timestamp
+      exchanges: exchangesArr,
+      timestamp
     })
   }
 
   dataShow() {
-    let selectedExchangeData, color, i = 0, dataShow = <div className="dataShow"></div>
-    for (let key in this.state.exchanges) {
-      if (this.state.exchanges[key]['display_name'] === this.state.selected) {
-        selectedExchangeData = this.state.exchanges[key]
-        color = this.colors[i]
-        dataShow = <DataShow
-          data={selectedExchangeData}
-          color={color}
-          timestamp={this.state.timestamp}/>
+    const { exchanges, selected, timestamp } = this.state
+    let dataShow = <div className="dataShow"></div>
+
+    exchanges.map(exch => {
+      if (exch.display_name === selected) {
+        dataShow = <DataShow data={exch} timestamp={timestamp}/>
       }
-      i++
-    }
+    })
 
     return dataShow
   }
 
   render() {
     let dataShow = this.dataShow()
+    const { exchanges, selected } = this.state
 
     return (
       <div>
         <header>
           <Nav
-            exchanges={this.state.exchanges}
+            exchanges={exchanges}
             changeSelected={this.changeSelected}
-            selected={this.state.selected}
+            selected={selected}
           />
         </header>
         <section>
           {dataShow}
           <VolumePie
             changeSelected={this.changeSelected}
-            data={this.state.exchanges}
-            selected={this.state.selected}
-            colors={this.colors}
+            data={exchanges}
+            selected={selected}
           />
         </section>
         <PriceToVolume
           changeSelected={this.changeSelected}
-          data={this.state.exchanges}
-          selected={this.state.selected}
-          colors={this.colors}
+          data={exchanges}
+          selected={selected}
         />
-        {this.props.children}
       </div>
     )
   }

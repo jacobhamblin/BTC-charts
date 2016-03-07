@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import '../../../scss/components/exchanges/dataShow.scss'
 import { Timestamp } from '../exchanges'
 
-const DataShow = ({data, color, timestamp}) => {
+const DataShow = ({data, timestamp}) => {
   let style = {
-    color: color
+    color: data.color
   }
 
   return (

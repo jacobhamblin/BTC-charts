@@ -18,10 +18,9 @@ class TodayHist extends Component {
   }
 
   loadData() {
-    const component = this
     getRequest(
       'https://api.bitcoinaverage.com/history/USD/per_minute_24h_sliding_window.csv',
-      (csv) => component.processData(csv)
+      (csv) => this.processData(csv)
     )
   }
 

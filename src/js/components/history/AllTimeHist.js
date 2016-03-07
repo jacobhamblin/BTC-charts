@@ -17,10 +17,9 @@ class AllTimeHist extends Component {
   }
 
   loadData() {
-    const component = this
     getRequest(
       'https://api.bitcoinaverage.com/history/USD/per_day_all_time_history.csv',
-      (csv) => component.processData(csv)
+      (csv) => this.processData(csv)
     )
   }
 
