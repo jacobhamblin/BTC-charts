@@ -3,24 +3,26 @@
   position: relative;
   background-color: #f7f7f7;
   min-width: 335.2px;
-  max-width: 900px;
-  border: 1px solid #777; }
+  max-width: 900px; }
   .dataShow .tableContainer {
     width: 100%; }
     .dataShow .tableContainer table {
       padding: 1em;
       color: #333;
       margin: 0 auto;
-      font-size: 14px; }
+      font-size: 14px;
+      width: 315px; }
       .dataShow .tableContainer table thead tr td {
         padding: 4px 0;
         font-size: 20px; }
-        .dataShow .tableContainer table thead tr td:nth-of-type(1) {
-          width: 60%; }
-        .dataShow .tableContainer table thead tr td:nth-of-type(2) {
-          width: 40%; }
         .dataShow .tableContainer table thead tr td a {
           font-weight: bold; }
+      .dataShow .tableContainer table tbody tr {
+        width: 287px; }
+        .dataShow .tableContainer table tbody tr td:nth-of-type(1) {
+          width: 169px; }
+        .dataShow .tableContainer table tbody tr td:nth-of-type(2) {
+          width: 112px; }
 
 @media (max-width: 1100px) {
   .dataShow {
@@ -39,40 +41,12 @@ nav.exchanges ul {
     padding: 1em;
     border-bottom: 0px solid;
     margin-bottom: 4px; }
-    nav.exchanges ul li:nth-of-type(1) {
-      border-color: #B4F0A8; }
-    nav.exchanges ul li:nth-of-type(2) {
-      border-color: #A8F0B4; }
-    nav.exchanges ul li:nth-of-type(3) {
-      border-color: #A8F0CC; }
-    nav.exchanges ul li:nth-of-type(4) {
-      border-color: #A8F0E4; }
-    nav.exchanges ul li:nth-of-type(5) {
-      border-color: #A8E4F0; }
-    nav.exchanges ul li:nth-of-type(6) {
-      border-color: #A8CCF0; }
-    nav.exchanges ul li:nth-of-type(7) {
-      border-color: #A8C0F0; }
-    nav.exchanges ul li:nth-of-type(8) {
-      border-color: #A8A8F0; }
-    nav.exchanges ul li:nth-of-type(9) {
-      border-color: #C0A8F0; }
-    nav.exchanges ul li:nth-of-type(10) {
-      border-color: #F0A8F0; }
-    nav.exchanges ul li:nth-of-type(11) {
-      border-color: #FF99EE; }
-    nav.exchanges ul li:nth-of-type(12) {
-      border-color: #F0A8D8; }
-    nav.exchanges ul li:nth-of-type(13) {
-      border-color: #F0A8C0; }
-    nav.exchanges ul li:nth-of-type(14) {
-      border-color: #F0A8A8; }
   nav.exchanges ul li.selected {
     border-width: 4px;
     margin-bottom: 0px; }
 .priceToVolume {
-  border: 1px solid #777;
   position: relative;
+  height: 400px;
   display: block; }
   .priceToVolume svg > text {
     display: none; }
@@ -83,13 +57,10 @@ nav.exchanges ul {
 
 @media (max-width: 1100px) {
   .priceToVolume {
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 0px; } }
+    border-top: 1px solid #777; } }
 .volumePie {
   position: relative;
   display: inline-block;
-  border: 1px solid #777;
   float: right;
   max-width: 550px;
   width: 550px;
@@ -124,7 +95,8 @@ section {
   -webkit-box-pack: justify;
           justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+  height: 400px; }
 
 @media (max-width: 1100px) {
   section {
@@ -146,11 +118,9 @@ section {
     display: block; }
   .todayHist svg > text.highcharts-subtitle {
     display: block; }
-.history .charts {
-  border: 1px solid #777; }
 nav.siteNav ul {
   margin: 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 4px solid #f7f7f7;
   text-align: right; }
   nav.siteNav ul li {
     display: inline-block;
