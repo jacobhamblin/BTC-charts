@@ -4,7 +4,6 @@ import ReactHighcharts from 'react-highcharts'
 import '../../../scss/components/exchanges/volumePie.scss'
 
 const VolumePie = ({data, changeSelected, selected}) => {
-  const appChangeSelected = changeSelected
   let aggregate = []
   data.map(exch => {
     let obj = {}
@@ -54,7 +53,7 @@ const VolumePie = ({data, changeSelected, selected}) => {
             events: {
               click: function (e) {
                 e.preventDefault()
-                appChangeSelected(this.name);
+                changeSelected(this.name);
               }
             }
           }

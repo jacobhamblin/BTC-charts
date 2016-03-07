@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import '../../../scss/components/exchanges/timestamp.scss'
 
 function processTimestamp(timestamp) {
-  let str
-  let seconds = (new Date().getTime() - Date.parse(timestamp)) * 0.001;
+  let seconds = (new Date().getTime() - Date.parse(timestamp)) * 0.001
 
   return parseInt(seconds)
 }

@@ -4,7 +4,6 @@ import ReactHighcharts from 'react-highcharts'
 import '../../../scss/components/exchanges/priceToVolume.scss'
 
 const PriceToVolume = ({data, changeSelected, selected}) => {
-  const appChangeSelected = changeSelected
   let aggregate = [], names = [], volumes = [], prices = []
   data.map(exch => {
     let volume = {}
@@ -111,7 +110,7 @@ const PriceToVolume = ({data, changeSelected, selected}) => {
         events: {
           click: function (e) {
             e.preventDefault()
-            appChangeSelected(this.category);
+            changeSelected(this.category);
           }
         }
       }
@@ -126,7 +125,7 @@ const PriceToVolume = ({data, changeSelected, selected}) => {
         events: {
           click: function (e) {
             e.preventDefault()
-            appChangeSelected(this.category);
+            changeSelected(this.category);
           }
         }
       }

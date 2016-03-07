@@ -3,10 +3,6 @@ import '../../../scss/components/exchanges/dataShow.scss'
 import { Timestamp } from '../exchanges'
 
 const DataShow = ({data, timestamp}) => {
-  let style = {
-    color: data.color
-  }
-
   return (
     <div className="dataShow">
       <div className="tableContainer">
@@ -14,7 +10,11 @@ const DataShow = ({data, timestamp}) => {
           <thead>
             <tr>
               <td colSpan="2">
-                <a href={data.display_URL} style={style}>{data.display_name}</a>
+                <a href={data.display_URL}
+                  style={{color: data.color}}
+                >
+                  {data.display_name}
+                </a>
               </td>
             </tr>
           </thead>
