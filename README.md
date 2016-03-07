@@ -1,6 +1,6 @@
 # BTC-charts
 
-BTC-charts is an aggregation of up-to-date bitcoin statistics, visualized, and rendered on a simple UI.
+BTC-charts is an aggregation of up-to-date bitcoin marketplace statistics, visualized, and rendered on a simple UI.
 
 As a bitcoin user, I've been interested in the protocol and perplexed by its inner workings for a while now. I want to understand the technology better, as well as some of the factors that contribute to the volatility of its worth. I made this as a means to tackle the latter and approach the former.
 
