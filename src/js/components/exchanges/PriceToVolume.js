@@ -91,10 +91,10 @@ const PriceToVolume = ({data, changeSelected, selected}) => {
       },
       line: {
         animation: false,
-        color: '#DDDDDD',
+        color: '#BBBBBB',
         cursor: "pointer",
         marker: {
-          fillColor: '#CCCCCC'
+          fillColor: '#AAAAAA'
         }
       }
     },

@@ -55,7 +55,8 @@ class Exchanges extends Component {
 
     this.setState({
       exchanges: exchangesArr,
-      timestamp
+      timestamp,
+      selected: exchangesArr[0].display_name
     })
   }
 

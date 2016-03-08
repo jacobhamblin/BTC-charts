@@ -6,15 +6,11 @@
   position: relative;
   display: inline-block;
   float: right;
-  max-width: 550px;
-  width: 550px;
-  min-width: 400px;
+  max-width: 544px;
+  width: 544px;
+  min-width: 494px;
 
   svg {
-    text {
-      margin-bottom: -15px;
-    }
-
     > text {
       display: none;
     }
