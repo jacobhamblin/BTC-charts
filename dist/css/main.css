@@ -4,26 +4,26 @@
   background-color: #f7f7f7;
   min-width: 335.2px;
   max-width: 900px;
-  margin-top: 12px; }
+  margin-top: 24px; }
   .dataShow .tableContainer {
     width: 100%; }
     .dataShow .tableContainer table {
       padding: 1em;
       color: #777;
-      margin: 12px auto 0 auto;
+      margin: 24px auto 0 auto;
       font-size: 14px;
-      width: 309px; }
+      width: 303px; }
       .dataShow .tableContainer table thead tr td {
         padding: 4px 0;
         font-size: 20px; }
         .dataShow .tableContainer table thead tr td a {
           font-weight: bold; }
       .dataShow .tableContainer table tbody tr {
-        width: 287px; }
+        width: 281px; }
         .dataShow .tableContainer table tbody tr td:nth-of-type(1) {
-          width: 186px; }
+          width: 183px; }
         .dataShow .tableContainer table tbody tr td:nth-of-type(2) {
-          width: 89px; }
+          width: 86px; }
 
 @media (max-width: 1100px) {
   .dataShow {
@@ -35,7 +35,7 @@ nav.exchanges ul {
   padding-left: 0;
   text-align: center;
   min-height: 54px;
-  margin: 12px 0;
+  margin: 24px 0;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -67,9 +67,9 @@ nav.exchanges ul {
   position: relative;
   display: inline-block;
   float: right;
-  max-width: 544px;
-  width: 544px;
-  min-width: 494px;
+  max-width: 538px;
+  width: 538px;
+  min-width: 488px;
   min-height: 400px; }
   .volumePie svg > text {
     display: none; }
@@ -100,16 +100,16 @@ section {
   -webkit-box-pack: justify;
           justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 36px;
+  margin-bottom: 48px;
   min-height: 400px; }
 
 @media (max-width: 1100px) {
   section {
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     min-height: 629px; } }
 .allTimeHist {
   height: 400px;
-  margin-top: 24px; }
+  margin-top: 36px; }
   .allTimeHist svg > text {
     display: none; }
   .allTimeHist svg > text.highcharts-title {
@@ -118,7 +118,7 @@ section {
     display: block; }
 .todayHist {
   height: 400px;
-  padding-bottom: 12px;
+  padding-bottom: 24px;
   border-bottom: 4px solid #f7f7f7; }
   .todayHist svg > text {
     display: none; }
@@ -126,6 +126,8 @@ section {
     display: block; }
   .todayHist svg > text.highcharts-subtitle {
     display: block; }
+.history h1 {
+  margin: 1.5em 0; }
 nav.siteNav ul {
   margin: 0;
   border-bottom: 4px solid #f7f7f7;
@@ -148,10 +150,10 @@ body {
     margin: 0 auto;
     position: relative;
     background-color: #fff;
-    padding: 24px; }
+    padding: 36px; }
     body #root .app footer {
       text-align: center;
-      margin-top: 12px; }
+      margin-top: 36px; }
       body #root .app footer svg {
         fill: #777; }
         body #root .app footer svg:hover {
