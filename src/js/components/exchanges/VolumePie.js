@@ -5,7 +5,7 @@ import '../../../scss/components/exchanges/volumePie.scss'
 
 const VolumePie = ({data, changeSelected, selected}) => {
   let aggregate = []
-  data.map(exch => {
+  data.map((exch, i) => {
     let obj = {}
     obj['name'] = exch['display_name']
     obj['y'] = exch['volume_percent']
@@ -14,7 +14,7 @@ const VolumePie = ({data, changeSelected, selected}) => {
       obj['selected'] = true
       obj['sliced'] = true
     }
-    aggregate.push(obj)
+    aggregate[(data.length - 1) - i] = obj
   })
 
 
