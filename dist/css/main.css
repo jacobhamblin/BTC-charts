@@ -45,7 +45,8 @@ nav.exchanges ul {
     cursor: pointer;
     padding: 1em;
     border-bottom: 0px solid;
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+    font-size: 0.95em; }
   nav.exchanges ul li.selected {
     border-width: 4px;
     margin-bottom: 0px; }

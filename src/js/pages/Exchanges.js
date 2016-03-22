@@ -44,7 +44,7 @@ class Exchanges extends Component {
     let timestamp = exchanges['timestamp'], exchangesArr = [], i = 0
     delete exchanges['timestamp']
     for (let key in exchanges) {
-      if (parseInt(exchanges[key]['volume_percent']) < 3) {
+      if (parseInt(exchanges[key]['volume_percent']) < 2) {
         delete exchanges[key]
       } else {
         exchanges[key]['color'] = colors[i % colors.length]
