@@ -2,6 +2,7 @@
 
 .todayHist {
   @include noAd;
+  position: relative;
 
   height: 400px;
   padding-bottom: 24px;

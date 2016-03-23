@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { VolumePie, PriceToVolume, DataShow, Nav } from '../components/exchanges'
+import { LoadingPie } from '../components'
 import { getRequest } from '../utils'
 import '../../scss/pages/exchanges.scss'
 
@@ -62,7 +63,7 @@ class Exchanges extends Component {
 
   dataShow() {
     const { exchanges, selected, timestamp } = this.state
-    let dataShow = <div className="dataShow"></div>
+    let dataShow = <div className="dataShow"><LoadingPie/></div>
 
     exchanges.map(exch => {
       if (exch.display_name === selected) {
@@ -76,6 +77,33 @@ class Exchanges extends Component {
   render() {
     let dataShow = this.dataShow()
     const { exchanges, selected } = this.state
+    let volumePie = (
+      <div className="volumePie">
+        <LoadingPie/>
+      </div>
+    )
+    let priceToVolume = (
+      <div className="priceToVolume">
+        <LoadingPie/>
+      </div>
+    )
+
+    if (this.state.exchanges.length > 0) {
+      volumePie = (
+        <VolumePie
+          changeSelected={this.changeSelected}
+          data={exchanges}
+          selected={selected}
+        />
+      )
+      priceToVolume = (
+        <PriceToVolume
+          changeSelected={this.changeSelected}
+          data={exchanges}
+          selected={selected}
+        />
+      )
+    }
 
     return (
       <div>
@@ -88,17 +116,9 @@ class Exchanges extends Component {
         </header>
         <section>
           {dataShow}
-          <VolumePie
-            changeSelected={this.changeSelected}
-            data={exchanges}
-            selected={selected}
-          />
+          {volumePie}
         </section>
-        <PriceToVolume
-          changeSelected={this.changeSelected}
-          data={exchanges}
-          selected={selected}
-        />
+        {priceToVolume}
       </div>
     )
   }

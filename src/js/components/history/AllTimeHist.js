@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import ReactHighcharts from 'react-highcharts'
 import { getRequest, csvArrToMSAndValue } from '../../utils'
+import { LoadingPie } from '../'
 import '../../../scss/components/history/allTimeHist.scss'
 
 class AllTimeHist extends Component {
@@ -96,12 +97,12 @@ class AllTimeHist extends Component {
         data: this.state.data
       }]
     }
-    const chart = (this.state.data ? <ReactHighcharts config={config}/> : null)
+    const chart = (this.state.data ? <ReactHighcharts config={config}/> : <LoadingPie/>)
 
 
     return (
       <div className="allTimeHist">
-        <ReactHighcharts config={config}/>
+        {chart}
       </div>
     )
   }
