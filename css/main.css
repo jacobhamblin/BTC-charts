@@ -132,27 +132,26 @@ section {
   section {
     margin-bottom: 24px;
     min-height: 629px; } }
-.allTimeHist {
+.timeline {
   position: relative;
   height: 400px;
   margin-top: 36px; }
-  .allTimeHist svg > text {
+  .timeline svg > text {
     display: none; }
-  .allTimeHist svg > text.highcharts-title {
+  .timeline svg > text.highcharts-title {
     display: block; }
-  .allTimeHist svg > text.highcharts-subtitle {
+  .timeline svg > text.highcharts-subtitle {
     display: block; }
-.todayHist {
-  position: relative;
-  height: 400px;
-  padding-bottom: 24px;
-  border-bottom: 4px solid #f7f7f7; }
-  .todayHist svg > text {
-    display: none; }
-  .todayHist svg > text.highcharts-title {
-    display: block; }
-  .todayHist svg > text.highcharts-subtitle {
-    display: block; }
+  .timeline button {
+    background-color: transparent;
+    font-family: "Open Sans", Helvetica, Arial;
+    position: absolute;
+    right: 11px;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1; }
 .history h1 {
   margin: 1.5em 0; }
 body {
