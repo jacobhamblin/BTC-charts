@@ -1,0 +1,21 @@
+@import '../chartMixin.scss';
+
+.timeline {
+  @include noAd;
+  position: relative;
+
+  height: 400px;
+  margin-top: 36px;
+
+  button {
+    background-color: transparent;
+    font-family: "Open Sans", Helvetica, Arial;
+    position: absolute;
+    right: 11px;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+}

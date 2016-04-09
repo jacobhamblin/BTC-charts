@@ -1,9 +1,0 @@
-@import '../chartMixin.scss';
-
-.allTimeHist {
-  @include noAd;
-  position: relative;
-
-  height: 400px;
-  margin-top: 36px;
-}

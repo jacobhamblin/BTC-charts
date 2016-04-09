@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TodayHist, AllTimeHist } from '../components/history'
+import { Timeline } from '../components/history'
 import '../../scss/pages/history.scss'
 
 const History = () => {
@@ -13,9 +13,7 @@ const History = () => {
     <div className="history">
       <h1>History - USD to BTC</h1>
       <div className="charts">
-        <TodayHist
-        colors={colors}/>
-        <AllTimeHist
+        <Timeline
         colors={colors}/>
       </div>
     </div>
