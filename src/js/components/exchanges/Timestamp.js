@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../../../scss/components/exchanges/timestamp.scss'
 
 function processTimestamp(timestamp) {
-  let seconds = (new Date().getTime() - Date.parse(timestamp)) * 0.001
+  let seconds = (new Date().getTime() - timestamp) * 0.001
 
   return parseInt(seconds)
 }
@@ -10,8 +10,7 @@ function processTimestamp(timestamp) {
 class Timestamp extends Component {
   constructor(props) {
     super(props)
-    let timePassed = processTimestamp(props.timestamp)
-    this.state = { timePassed }
+    this.state = { timePassed: processTimestamp(props.timestamp)}
     this.tick = this.tick.bind(this)
   }
 

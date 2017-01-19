@@ -42,8 +42,7 @@ class Exchanges extends Component {
       '#F0A8F0', '#F0A8D8', '#F0A8C0', '#F0A8A8', '#F0C0A8',
       '#F0D8A8', '#F0F0A8'
     ]
-    let timestamp = exchanges['timestamp'], exchangesArr = [], i = 0
-    delete exchanges['timestamp']
+    let exchangesArr = [], i = 0
     for (let key in exchanges) {
       if (parseInt(exchanges[key]['volume_percent']) < 2) {
         delete exchanges[key]
@@ -56,7 +55,7 @@ class Exchanges extends Component {
 
     this.setState({
       exchanges: exchangesArr,
-      timestamp,
+      timestamp: Date.now(),
       selected: exchangesArr[0].display_name
     })
   }

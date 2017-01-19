@@ -22,18 +22,19 @@ class Timeline extends Component {
 
   loadData() {
     getRequest(
-      'https://api.bitcoinaverage.com/history/USD/per_minute_24h_sliding_window.csv',
+      'https://apiv2.bitcoinaverage.com/indices/global/history/BTCUSD?period=daily&format=csv',
       (csv) => this.processToday(csv)
     )
     getRequest(
-      'https://api.bitcoinaverage.com/history/USD/per_day_all_time_history.csv',
+      'https://apiv2.bitcoinaverage.com/indices/global/history/BTCUSD?period=alltime&format=csv',
       (csv) => this.processAllTime(csv)
     )
   }
 
   processToday(csv) {
-    let arr = csv.split('\r\n')
+    let arr = csv.split('\n')
     let split = arr.map(row => row.split(','))
+    debugger
     const data = csvArrToMSAndValue(split)
 
     this.setState({today: data})
